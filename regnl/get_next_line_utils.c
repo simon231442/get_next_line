@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:21:48 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/06 17:46:08 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/07 11:46:55 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char    *gnl_strchr(char *s, char c)
 {
 	if (!s)
 		return(NULL);
-
 	while (*s)
 	{
 		if (*s == c)
@@ -49,7 +48,7 @@ char    *gnl_strjoin(char *stash, char *buff)
 	if (!str)
 		return (NULL);
 	ft_strcpy(str, stash);
-	ft_strcat(stash, buff);
+	ft_strcat(str, buff);
 	return (str);
 }
 

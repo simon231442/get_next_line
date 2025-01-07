@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 13:24:49 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/06 19:06:14 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/07 15:16:09 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 10 
 # endif
 
 # include <stdlib.h>
@@ -24,7 +24,7 @@ char	*get_next_line(int fd);
 
 char	*read_file(char *stash, int fd);
 char	*extract_line(char *stash);
-void	clean_stash(char *stash, int len_line);
+char	*clean_stash(char *stash, int len_line);
 char    *init_stash(char *stash);
 
 int		ft_strlen(char *str);
