@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 23:39:52 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/07 15:51:55 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/07 20:23:42 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,18 @@ char	*get_next_line(int fd)
 	char		*line;
 	int		len_line;
 
-//	write(1,"a\n",2);
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (NULL);
 	stash = read_file(stash, fd);
-//	write(1,"c\n",2);
+	if (!stash)
+		return (NULL);
 	line = extract_line(stash);
+	if (!line)
+		return (NULL);
 	len_line = ft_strlen(line);
 	stash = clean_stash(stash, len_line);
+	if (!stash)
+		return (NULL);
 	return (line);
 }
 
@@ -40,16 +46,19 @@ char	*read_file(char *stash, int fd)
 
 	if (!stash)
 		stash = init_stash(stash);
+		if (!stash)
+			return (NULL);
 	bytes_read = 1;
 	while (!gnl_strchr(stash, '\n') && bytes_read > 0)
 	{
-//	write(1,"b\n",2);
 		bytes_read = read(fd, buff, BUFFER_SIZE);
 		if (bytes_read < 0)
-			return(/*free(stash),free(tmp_stash),*/ NULL);
+			return (free(tmp_stash), free(stash), NULL);
 		buff[bytes_read] = '\0';
 		tmp_stash = gnl_strjoin(stash, buff);
 		free(stash);
+		if (!tmp(stash)
+			return (free(tmp_stash), NULL);
 		stash = tmp_stash;
 	}
 	return (stash);
@@ -95,7 +104,7 @@ char	*clean_stash(char *stash, int len_line)
 		len_cleaned_stash++;
 	}
 	cleaned_stash[len_cleaned_stash] = '\0';
-	return (/*free(stash), */cleaned_stash);
+	return (free(stash), cleaned_stash);
 }
 
 char	*init_stash(char *stash)
