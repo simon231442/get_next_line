@@ -28,13 +28,13 @@ char	*get_next_line(int fd)
 	stash = read_file(stash, fd);
 	if (!stash)
 		return (NULL);
+	if (stash[0] == '\0')
+		return (free(stash), NULL);
 	line = extract_line(stash);
 	if (!line)
 		return (free(stash), NULL);
 	len_line = ft_strlen(line);
 	stash = clean_stash(stash, len_line);
-	if (stash && stash[0] == '\0')
-		return (free(stash), free(line), NULL);
 	return (line);
 }
 
@@ -72,9 +72,9 @@ char	*extract_line(char *stash)
 	int		len_line;
 
 	len_line = 0;
-	while (stash[len_line] != '\n' && stash[len_line])
+	while (stash[len_line] != '\n' && stash[len_line + 1])
 		len_line++;
-	line = malloc(sizeof(char) * (len_line + 2));
+	line = malloc(sizeof(char) * (len_line + 1));
 	if (!line)
 		return (NULL);
 	len_line = 0;
@@ -83,7 +83,8 @@ char	*extract_line(char *stash)
 		line[len_line] = stash[len_line];
 		len_line++;
 	}
-	line[len_line] = '\n';
+	if (stash[len_line] == '\n')
+		line[len_line] = '\n';
 	line[len_line + 1] = '\0';
 	return (line);
 }
@@ -117,6 +118,7 @@ char	*init_stash(char *stash)
 	stash[0] = '\0';
 	return (stash);
 }
+
 #include <fcntl.h>
 #include <stdio.h>
 int	main(void)
@@ -129,11 +131,11 @@ int	main(void)
 	fd = open("test", O_RDONLY);
 	while ((line = get_next_line(fd)))
 	{
-		printf("%d : %s\n", count, line);
+		printf("%d : %s", count, line);
 		free(line);
 		count++;
-		if (count == 20)
-			break;
+//		if (count == 20)
+//			break;
 	}
 	close(fd);
 	return (0);
