@@ -44,7 +44,7 @@ char    *gnl_strjoin(char *stash, char *buff)
 
 	if (!stash)
 		return(NULL);
-	str = malloc(sizeof(char)*(ft_strlen(stash) + ft_strlen(buff)));
+	str = malloc(sizeof(char)*(ft_strlen(stash) + ft_strlen(buff) + 1));
 	if (!str)
 		return (NULL);
 	ft_strcpy(str, stash);

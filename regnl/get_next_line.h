@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 13:24:49 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/07 15:16:09 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/08 10:37:56 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10 
+#  define BUFFER_SIZE 42 
 # endif
 
 # include <stdlib.h>
