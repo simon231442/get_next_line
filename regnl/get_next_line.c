@@ -61,7 +61,7 @@ char	*read_file(char *stash, int fd)
 			return (free(tmp_stash), NULL);
 		stash = tmp_stash;
 	}
-	return (stash);
+	return (free(tmp_stash), stash);
 }
 
 char	*extract_line(char *stash)
