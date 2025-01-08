@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 23:39:52 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/08 13:05:57 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/08 21:55:58 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*read_file(char *stash, int fd)
 	while (!gnl_strchr(stash, '\n') && bytes_read > 0)
 	{
 		bytes_read = read(fd, buff, BUFFER_SIZE);
-		if (bytes_read < 0)
+		if (bytes_read <= 0)
 			return (free(stash), NULL);
 		buff[bytes_read] = '\0';
 		tmp_stash = gnl_strjoin(stash, buff);
@@ -74,7 +74,7 @@ char	*extract_line(char *stash)
 	len_line = 0;
 	while (stash[len_line] != '\n' && stash[len_line + 1])
 		len_line++;
-	line = malloc(sizeof(char) * (len_line + 1));
+	line = malloc(sizeof(char) * (len_line + 2));
 	if (!line)
 		return (NULL);
 	len_line = 0;
@@ -134,8 +134,17 @@ int	main(void)
 		printf("%d : %s", count, line);
 		free(line);
 		count++;
-//		if (count == 20)
-//			break;
+	}
+	close(fd);
+
+	printf("\n\n");
+
+	fd = open("fsoares/empty.txt", O_RDONLY);
+	while ((line = get_next_line(fd)))
+	{
+		printf("%d : %s", count, line);
+		free(line);
+		count++;
 	}
 	close(fd);
 	return (0);
