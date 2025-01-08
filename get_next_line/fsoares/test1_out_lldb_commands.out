@@ -1,0 +1,157 @@
+(lldb) target create "test1.out"
+Current executable set to '/Users/srenaud/francinette/temp/get_next_line/fsoares/test1.out' (x86_64).
+(lldb) command source -s 0 'test1_out_lldb_commands'
+Executing commands in '/Users/srenaud/francinette/temp/get_next_line/fsoares/test1_out_lldb_commands'.
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address clean_stash+112
+      Address: test1.out[0x0000000100010880] (test1.out.__TEXT.__text + 49808)
+      Summary: test1.out`clean_stash + 112 at get_next_line.c:97:9
+(lldb) image lookup --address get_next_line+211
+      Address: test1.out[0x00000001000100a3] (test1.out.__TEXT.__text + 47795)
+      Summary: test1.out`get_next_line + 211 at get_next_line.c:35:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+2679
+      Address: test1.out[0x0000000100005ce7] (test1.out.__TEXT.__text + 5879)
+      Summary: test1.out`main + 2679 at tester.c:111:2
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address clean_stash+112
+      Address: test1.out[0x0000000100010880] (test1.out.__TEXT.__text + 49808)
+      Summary: test1.out`clean_stash + 112 at get_next_line.c:97:9
+(lldb) image lookup --address get_next_line+211
+      Address: test1.out[0x00000001000100a3] (test1.out.__TEXT.__text + 47795)
+      Summary: test1.out`get_next_line + 211 at get_next_line.c:35:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+4208
+      Address: test1.out[0x00000001000062e0] (test1.out.__TEXT.__text + 7408)
+      Summary: test1.out`main + 4208 at tester.c:117:2
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address clean_stash+112
+      Address: test1.out[0x0000000100010880] (test1.out.__TEXT.__text + 49808)
+      Summary: test1.out`clean_stash + 112 at get_next_line.c:97:9
+(lldb) image lookup --address get_next_line+211
+      Address: test1.out[0x00000001000100a3] (test1.out.__TEXT.__text + 47795)
+      Summary: test1.out`get_next_line + 211 at get_next_line.c:35:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+5737
+      Address: test1.out[0x00000001000068d9] (test1.out.__TEXT.__text + 8937)
+      Summary: test1.out`main + 5737 at tester.c:123:2
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address gnl_strchr+120
+      Address: test1.out[0x0000000100010c68] (test1.out.__TEXT.__text + 50808)
+      Summary: test1.out`gnl_strchr + 120 at get_next_line_utils.c:29:9
+(lldb) image lookup --address read_file+301
+      Address: test1.out[0x000000010001028d] (test1.out.__TEXT.__text + 48285)
+      Summary: test1.out`read_file + 301 at get_next_line.c:54:10
+(lldb) image lookup --address get_next_line+84
+      Address: test1.out[0x0000000100010024] (test1.out.__TEXT.__text + 47668)
+      Summary: test1.out`get_next_line + 84 at get_next_line.c:28:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+7339
+      Address: test1.out[0x0000000100006f1b] (test1.out.__TEXT.__text + 10539)
+      Summary: test1.out`main + 7339 at tester.c:129:2
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address gnl_strchr+120
+      Address: test1.out[0x0000000100010c68] (test1.out.__TEXT.__text + 50808)
+      Summary: test1.out`gnl_strchr + 120 at get_next_line_utils.c:29:9
+(lldb) image lookup --address read_file+301
+      Address: test1.out[0x000000010001028d] (test1.out.__TEXT.__text + 48285)
+      Summary: test1.out`read_file + 301 at get_next_line.c:54:10
+(lldb) image lookup --address get_next_line+84
+      Address: test1.out[0x0000000100010024] (test1.out.__TEXT.__text + 47668)
+      Summary: test1.out`get_next_line + 84 at get_next_line.c:28:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+8871
+      Address: test1.out[0x0000000100007517] (test1.out.__TEXT.__text + 12071)
+      Summary: test1.out`main + 8871 at tester.c:135:2
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address gnl_strchr+120
+      Address: test1.out[0x0000000100010c68] (test1.out.__TEXT.__text + 50808)
+      Summary: test1.out`gnl_strchr + 120 at get_next_line_utils.c:29:9
+(lldb) image lookup --address read_file+301
+      Address: test1.out[0x000000010001028d] (test1.out.__TEXT.__text + 48285)
+      Summary: test1.out`read_file + 301 at get_next_line.c:54:10
+(lldb) image lookup --address get_next_line+84
+      Address: test1.out[0x0000000100010024] (test1.out.__TEXT.__text + 47668)
+      Summary: test1.out`get_next_line + 84 at get_next_line.c:28:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+10700
+      Address: test1.out[0x0000000100007c3c] (test1.out.__TEXT.__text + 13900)
+      Summary: test1.out`main + 10700 at tester.c:145:2
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address gnl_strchr+120
+      Address: test1.out[0x0000000100010c68] (test1.out.__TEXT.__text + 50808)
+      Summary: test1.out`gnl_strchr + 120 at get_next_line_utils.c:29:9
+(lldb) image lookup --address read_file+301
+      Address: test1.out[0x000000010001028d] (test1.out.__TEXT.__text + 48285)
+      Summary: test1.out`read_file + 301 at get_next_line.c:54:10
+(lldb) image lookup --address get_next_line+84
+      Address: test1.out[0x0000000100010024] (test1.out.__TEXT.__text + 47668)
+      Summary: test1.out`get_next_line + 84 at get_next_line.c:28:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+13054
+      Address: test1.out[0x000000010000856e] (test1.out.__TEXT.__text + 16254)
+      Summary: test1.out`main + 13054 at tester.c:162:2
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address gnl_strchr+120
+      Address: test1.out[0x0000000100010c68] (test1.out.__TEXT.__text + 50808)
+      Summary: test1.out`gnl_strchr + 120 at get_next_line_utils.c:29:9
+(lldb) image lookup --address read_file+301
+      Address: test1.out[0x000000010001028d] (test1.out.__TEXT.__text + 48285)
+      Summary: test1.out`read_file + 301 at get_next_line.c:54:10
+(lldb) image lookup --address get_next_line+84
+      Address: test1.out[0x0000000100010024] (test1.out.__TEXT.__text + 47668)
+      Summary: test1.out`get_next_line + 84 at get_next_line.c:28:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+14879
+      Address: test1.out[0x0000000100008c8f] (test1.out.__TEXT.__text + 18079)
+      Summary: test1.out`main + 14879 at tester.c:193:2
+(lldb) image lookup --address sigabort+33
+      Address: test1.out[0x000000010000c801] (test1.out.__TEXT.__text + 33297)
+      Summary: test1.out`sigabort + 33 at utils.c:58:1
+(lldb) image lookup --address gnl_strchr+120
+      Address: test1.out[0x0000000100010c68] (test1.out.__TEXT.__text + 50808)
+      Summary: test1.out`gnl_strchr + 120 at get_next_line_utils.c:29:9
+(lldb) image lookup --address read_file+301
+      Address: test1.out[0x000000010001028d] (test1.out.__TEXT.__text + 48285)
+      Summary: test1.out`read_file + 301 at get_next_line.c:54:10
+(lldb) image lookup --address get_next_line+84
+      Address: test1.out[0x0000000100010024] (test1.out.__TEXT.__text + 47668)
+      Summary: test1.out`get_next_line + 84 at get_next_line.c:28:8
+(lldb) image lookup --address test_gnl_func+65
+      Address: test1.out[0x000000010000f8a1] (test1.out.__TEXT.__text + 45745)
+      Summary: test1.out`test_gnl_func + 65 at file_utils.c:40:8
+(lldb) image lookup --address main+17067
+      Address: test1.out[0x000000010000951b] (test1.out.__TEXT.__text + 20267)
+      Summary: test1.out`main + 17067 at tester.c:243:2

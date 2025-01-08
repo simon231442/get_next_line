@@ -1,0 +1,1499 @@
+##==##==##&&##==##==##./test1.out
+=================================================================
+[1m[31m==11029==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000131 at pc 0x000101649880 bp 0x7ffeee5c60e0 sp 0x7ffeee5c60d8
+[1m[0m[1m[34mREAD of size 1 at 0x602000000131 thread T0[1m[0m
+    #0 0x10164987f in clean_stash get_next_line.c:97
+    #1 0x1016490a2 in get_next_line get_next_line.c:35
+    #2 0x1016488a0 in test_gnl_func file_utils.c:40
+    #3 0x10163ece6 in main tester.c:111
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000131 is located 0 bytes to the right of 1-byte region [0x602000000130,0x602000000131)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x101649d6a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x101649358 in read_file get_next_line.c:60
+    #4 0x101649023 in get_next_line get_next_line.c:28
+    #5 0x1016488a0 in test_gnl_func file_utils.c:40
+    #6 0x10163ece6 in main tester.c:111
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "empty.txt")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c60e0 0x0 + 140732897452256
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649880 clean_stash + 112
+11  test1.out                           0x00000001016490a3 get_next_line + 211
+12  test1.out                           0x00000001016488a1 test_gnl_func + 65
+13  test1.out                           0x000000010163ece7 main + 2679
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11034==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000152 at pc 0x000101649880 bp 0x7ffeee5c60e0 sp 0x7ffeee5c60d8
+[1m[0m[1m[34mREAD of size 1 at 0x602000000152 thread T0[1m[0m
+    #0 0x10164987f in clean_stash get_next_line.c:97
+    #1 0x1016490a2 in get_next_line get_next_line.c:35
+    #2 0x1016488a0 in test_gnl_func file_utils.c:40
+    #3 0x10163f2df in main tester.c:117
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000152 is located 0 bytes to the right of 2-byte region [0x602000000150,0x602000000152)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x101649d6a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x101649358 in read_file get_next_line.c:60
+    #4 0x101649023 in get_next_line get_next_line.c:28
+    #5 0x1016488a0 in test_gnl_func file_utils.c:40
+    #6 0x10163f2df in main tester.c:117
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "1char.txt")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c60e0 0x0 + 140732897452256
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649880 clean_stash + 112
+11  test1.out                           0x00000001016490a3 get_next_line + 211
+12  test1.out                           0x00000001016488a1 test_gnl_func + 65
+13  test1.out                           0x000000010163f2e0 main + 4208
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11037==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6030000019ab at pc 0x000101649880 bp 0x7ffeee5c60e0 sp 0x7ffeee5c60d8
+[1m[0m[1m[34mREAD of size 1 at 0x6030000019ab thread T0[1m[0m
+    #0 0x10164987f in clean_stash get_next_line.c:97
+    #1 0x1016490a2 in get_next_line get_next_line.c:35
+    #2 0x1016488a0 in test_gnl_func file_utils.c:40
+    #3 0x10163f8d8 in main tester.c:123
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6030000019ab is located 0 bytes to the right of 27-byte region [0x603000001990,0x6030000019ab)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x101649d6a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x101649358 in read_file get_next_line.c:60
+    #4 0x101649023 in get_next_line get_next_line.c:28
+    #5 0x1016488a0 in test_gnl_func file_utils.c:40
+    #6 0x10163f8d8 in main tester.c:123
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "one_line_no_nl.txt")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c60e0 0x0 + 140732897452256
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649880 clean_stash + 112
+11  test1.out                           0x00000001016490a3 get_next_line + 211
+12  test1.out                           0x00000001016488a1 test_gnl_func + 65
+13  test1.out                           0x000000010163f8d9 main + 5737
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11040==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000170 at pc 0x000101649c68 bp 0x7ffeee5c6020 sp 0x7ffeee5c6018
+[1m[0m[1m[34mREAD of size 1 at 0x602000000170 thread T0[1m[0m
+    #0 0x101649c67 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10164928c in read_file get_next_line.c:54
+    #2 0x101649023 in get_next_line get_next_line.c:28
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x10163ff1a in main tester.c:129
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000170 is located 0 bytes inside of 1-byte region [0x602000000170,0x602000000171)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x104c482c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x101643135 in free malloc_mock.c:82
+    #2 0x101649123 in get_next_line get_next_line.c:37
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x10163fed1 in main tester.c:129
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x1016498b1 in clean_stash get_next_line.c:99
+    #3 0x1016490a2 in get_next_line get_next_line.c:35
+    #4 0x1016488a0 in test_gnl_func file_utils.c:40
+    #5 0x10163fed1 in main tester.c:129
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "only_nl.txt")[0m: expected: "\n", got: <NULL>
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "only_nl.txt")[0m: not enough memory allocated, needed: 2, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "\n"
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "only_nl.txt")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c6020 0x0 + 140732897452064
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649c68 gnl_strchr + 120
+11  test1.out                           0x000000010164928d read_file + 301
+12  test1.out                           0x0000000101649024 get_next_line + 84
+13  test1.out                           0x00000001016488a1 test_gnl_func + 65
+14  test1.out                           0x000000010163ff1b main + 7339
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+[0;31m1.KO [0m=================================================================
+[1m[31m==11043==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000170 at pc 0x000101649c68 bp 0x7ffeee5c6020 sp 0x7ffeee5c6018
+[1m[0m[1m[34mREAD of size 1 at 0x602000000170 thread T0[1m[0m
+    #0 0x101649c67 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10164928c in read_file get_next_line.c:54
+    #2 0x101649023 in get_next_line get_next_line.c:28
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x101640516 in main tester.c:135
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000170 is located 0 bytes inside of 1-byte region [0x602000000170,0x602000000171)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x104c482c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x101643135 in free malloc_mock.c:82
+    #2 0x101649123 in get_next_line get_next_line.c:37
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x1016404ca in main tester.c:135
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x1016498b1 in clean_stash get_next_line.c:99
+    #3 0x1016490a2 in get_next_line get_next_line.c:35
+    #4 0x1016488a0 in test_gnl_func file_utils.c:40
+    #5 0x1016404ca in main tester.c:135
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "multiple_nl.txt")[0m: expected: "\n", got: <NULL>
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "multiple_nl.txt")[0m: not enough memory allocated, needed: 2, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "\n"
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "multiple_nl.txt")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c6020 0x0 + 140732897452064
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649c68 gnl_strchr + 120
+11  test1.out                           0x000000010164928d read_file + 301
+12  test1.out                           0x0000000101649024 get_next_line + 84
+13  test1.out                           0x00000001016488a1 test_gnl_func + 65
+14  test1.out                           0x0000000101640517 main + 8871
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11046==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000170 at pc 0x000101649c68 bp 0x7ffeee5c6020 sp 0x7ffeee5c6018
+[1m[0m[1m[34mREAD of size 1 at 0x602000000170 thread T0[1m[0m
+    #0 0x101649c67 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10164928c in read_file get_next_line.c:54
+    #2 0x101649023 in get_next_line get_next_line.c:28
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x101640c3b in main tester.c:145
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000170 is located 0 bytes inside of 1-byte region [0x602000000170,0x602000000171)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x104c482c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x101643135 in free malloc_mock.c:82
+    #2 0x101649123 in get_next_line get_next_line.c:37
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x101640bef in main tester.c:145
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x1016498b1 in clean_stash get_next_line.c:99
+    #3 0x1016490a2 in get_next_line get_next_line.c:35
+    #4 0x1016488a0 in test_gnl_func file_utils.c:40
+    #5 0x101640bef in main tester.c:145
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "variable_nls.txt")[0m: expected: "\n", got: <NULL>
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "variable_nls.txt")[0m: not enough memory allocated, needed: 2, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "\n"
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "variable_nls.txt")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c6020 0x0 + 140732897452064
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649c68 gnl_strchr + 120
+11  test1.out                           0x000000010164928d read_file + 301
+12  test1.out                           0x0000000101649024 get_next_line + 84
+13  test1.out                           0x00000001016488a1 test_gnl_func + 65
+14  test1.out                           0x0000000101640c3c main + 10700
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11051==ERROR: AddressSanitizer: heap-use-after-free on address 0x6020000002b0 at pc 0x000101649c68 bp 0x7ffeee5c6020 sp 0x7ffeee5c6018
+[1m[0m[1m[34mREAD of size 1 at 0x6020000002b0 thread T0[1m[0m
+    #0 0x101649c67 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10164928c in read_file get_next_line.c:54
+    #2 0x101649023 in get_next_line get_next_line.c:28
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x10164156d in main tester.c:162
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6020000002b0 is located 0 bytes inside of 1-byte region [0x6020000002b0,0x6020000002b1)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x104c482c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x101643135 in free malloc_mock.c:82
+    #2 0x101649123 in get_next_line get_next_line.c:37
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x101641521 in main tester.c:162
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x1016498b1 in clean_stash get_next_line.c:99
+    #3 0x1016490a2 in get_next_line get_next_line.c:35
+    #4 0x1016488a0 in test_gnl_func file_utils.c:40
+    #5 0x101641521 in main tester.c:162
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "lines_around_10.txt")[0m: expected: "0123456789\n", got: <NULL>
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "lines_around_10.txt")[0m: not enough memory allocated, needed: 12, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "0123456789\n"
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "lines_around_10.txt")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c6020 0x0 + 140732897452064
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649c68 gnl_strchr + 120
+11  test1.out                           0x000000010164928d read_file + 301
+12  test1.out                           0x0000000101649024 get_next_line + 84
+13  test1.out                           0x00000001016488a1 test_gnl_func + 65
+14  test1.out                           0x000000010164156e main + 13054
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11054==ERROR: AddressSanitizer: heap-use-after-free on address 0x6020000002b0 at pc 0x000101649c68 bp 0x7ffeee5c6020 sp 0x7ffeee5c6018
+[1m[0m[1m[34mREAD of size 1 at 0x6020000002b0 thread T0[1m[0m
+    #0 0x101649c67 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10164928c in read_file get_next_line.c:54
+    #2 0x101649023 in get_next_line get_next_line.c:28
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x101641c8e in main tester.c:193
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6020000002b0 is located 0 bytes inside of 1-byte region [0x6020000002b0,0x6020000002b1)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x104c482c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x101643135 in free malloc_mock.c:82
+    #2 0x101649123 in get_next_line get_next_line.c:37
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x101641c4b in main tester.c:193
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x1016498b1 in clean_stash get_next_line.c:99
+    #3 0x1016490a2 in get_next_line get_next_line.c:35
+    #4 0x1016488a0 in test_gnl_func file_utils.c:40
+    #5 0x101641c4b in main tester.c:193
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "read_error.txt")[0m: expected: "aaaaaaaaaa\n", got: <NULL>
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "read_error.txt")[0m: not enough memory allocated, needed: 12, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "aaaaaaaaaa\n"
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "read_error.txt")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c6020 0x0 + 140732897452064
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649c68 gnl_strchr + 120
+11  test1.out                           0x000000010164928d read_file + 301
+12  test1.out                           0x0000000101649024 get_next_line + 84
+13  test1.out                           0x00000001016488a1 test_gnl_func + 65
+14  test1.out                           0x0000000101641c8f main + 14879
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11058==ERROR: AddressSanitizer: heap-use-after-free on address 0x6020000002b0 at pc 0x000101649c68 bp 0x7ffeee5c6020 sp 0x7ffeee5c6018
+[1m[0m[1m[34mREAD of size 1 at 0x6020000002b0 thread T0[1m[0m
+    #0 0x101649c67 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10164928c in read_file get_next_line.c:54
+    #2 0x101649023 in get_next_line get_next_line.c:28
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x10164251a in main tester.c:243
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6020000002b0 is located 0 bytes inside of 1-byte region [0x6020000002b0,0x6020000002b1)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x104c482c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x101643135 in free malloc_mock.c:82
+    #2 0x101649123 in get_next_line get_next_line.c:37
+    #3 0x1016488a0 in test_gnl_func file_utils.c:40
+    #4 0x1016424d7 in main tester.c:243
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x104c4817d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x101642afc in malloc malloc_mock.c:65
+    #2 0x1016498b1 in clean_stash get_next_line.c:99
+    #3 0x1016490a2 in get_next_line get_next_line.c:35
+    #4 0x1016488a0 in test_gnl_func file_utils.c:40
+    #5 0x1016424d7 in main tester.c:243
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test1.out
+[1;31mError[0m in test 1: [0;36mget_next_line(0: "stdin")[0m: expected: "0123456789\n", got: <NULL>
+[1;31mError[0m in test 1: [0;36mget_next_line(0: "stdin")[0m: not enough memory allocated, needed: 12, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "0123456789\n"
+[1;31mError[0m in test 2: [0;36mget_next_line(0: "stdin")[0m: [1;31mMemory problems![0m
+0   test1.out                           0x0000000101645733 show_signal_msg + 419
+1   test1.out                           0x0000000101645801 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeee5c6020 0x0 + 140732897452064
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c67cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c676a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4e09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000104c4eae8 __asan_report_load1 + 40
+10  test1.out                           0x0000000101649c68 gnl_strchr + 120
+11  test1.out                           0x000000010164928d read_file + 301
+12  test1.out                           0x0000000101649024 get_next_line + 84
+13  test1.out                           0x00000001016488a1 test_gnl_func + 65
+14  test1.out                           0x000000010164251b main + 17067
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+##==##==##&&##==##==##./test1.out
+##==##==##&&##==##==##./test2.out
+=================================================================
+[1m[31m==11073==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000131 at pc 0x00010cf756e0 bp 0x7ffee2c900e0 sp 0x7ffee2c900d8
+[1m[0m[1m[34mREAD of size 1 at 0x602000000131 thread T0[1m[0m
+    #0 0x10cf756df in clean_stash get_next_line.c:97
+    #1 0x10cf74f02 in get_next_line get_next_line.c:35
+    #2 0x10cf74700 in test_gnl_func file_utils.c:40
+    #3 0x10cf69796 in main tester.c:111
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000131 is located 0 bytes to the right of 1-byte region [0x602000000130,0x602000000131)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75bca in gnl_strjoin get_next_line_utils.c:47
+    #3 0x10cf751ba in read_file get_next_line.c:60
+    #4 0x10cf74e83 in get_next_line get_next_line.c:28
+    #5 0x10cf74700 in test_gnl_func file_utils.c:40
+    #6 0x10cf69796 in main tester.c:111
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "empty.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c900e0 0x0 + 140732703244512
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf756e0 clean_stash + 112
+11  test2.out                           0x000000010cf74f03 get_next_line + 211
+12  test2.out                           0x000000010cf74701 test_gnl_func + 65
+13  test2.out                           0x000000010cf69797 main + 2983
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11078==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000152 at pc 0x00010cf756e0 bp 0x7ffee2c900e0 sp 0x7ffee2c900d8
+[1m[0m[1m[34mREAD of size 1 at 0x602000000152 thread T0[1m[0m
+    #0 0x10cf756df in clean_stash get_next_line.c:97
+    #1 0x10cf74f02 in get_next_line get_next_line.c:35
+    #2 0x10cf74700 in test_gnl_func file_utils.c:40
+    #3 0x10cf69d8f in main tester.c:117
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000152 is located 0 bytes to the right of 2-byte region [0x602000000150,0x602000000152)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75bca in gnl_strjoin get_next_line_utils.c:47
+    #3 0x10cf751ba in read_file get_next_line.c:60
+    #4 0x10cf74e83 in get_next_line get_next_line.c:28
+    #5 0x10cf74700 in test_gnl_func file_utils.c:40
+    #6 0x10cf69d8f in main tester.c:117
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "1char.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c900e0 0x0 + 140732703244512
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf756e0 clean_stash + 112
+11  test2.out                           0x000000010cf74f03 get_next_line + 211
+12  test2.out                           0x000000010cf74701 test_gnl_func + 65
+13  test2.out                           0x000000010cf69d90 main + 4512
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11081==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6030000017fb at pc 0x00010cf756e0 bp 0x7ffee2c900e0 sp 0x7ffee2c900d8
+[1m[0m[1m[34mREAD of size 1 at 0x6030000017fb thread T0[1m[0m
+    #0 0x10cf756df in clean_stash get_next_line.c:97
+    #1 0x10cf74f02 in get_next_line get_next_line.c:35
+    #2 0x10cf74700 in test_gnl_func file_utils.c:40
+    #3 0x10cf6a388 in main tester.c:123
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6030000017fb is located 0 bytes to the right of 27-byte region [0x6030000017e0,0x6030000017fb)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75bca in gnl_strjoin get_next_line_utils.c:47
+    #3 0x10cf751ba in read_file get_next_line.c:60
+    #4 0x10cf74e83 in get_next_line get_next_line.c:28
+    #5 0x10cf74700 in test_gnl_func file_utils.c:40
+    #6 0x10cf6a388 in main tester.c:123
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "one_line_no_nl.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c900e0 0x0 + 140732703244512
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf756e0 clean_stash + 112
+11  test2.out                           0x000000010cf74f03 get_next_line + 211
+12  test2.out                           0x000000010cf74701 test_gnl_func + 65
+13  test2.out                           0x000000010cf6a389 main + 6041
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+[0;31m1.KO [0m=================================================================
+[1m[31m==11084==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000170 at pc 0x00010cf75ac8 bp 0x7ffee2c90020 sp 0x7ffee2c90018
+[1m[0m[1m[34mREAD of size 1 at 0x602000000170 thread T0[1m[0m
+    #0 0x10cf75ac7 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10cf750ee in read_file get_next_line.c:54
+    #2 0x10cf74e83 in get_next_line get_next_line.c:28
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6a9ca in main tester.c:129
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000170 is located 0 bytes inside of 1-byte region [0x602000000170,0x602000000171)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x1105752c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x10cf6ef85 in free malloc_mock.c:82
+    #2 0x10cf74f83 in get_next_line get_next_line.c:37
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6a981 in main tester.c:129
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75711 in clean_stash get_next_line.c:99
+    #3 0x10cf74f02 in get_next_line get_next_line.c:35
+    #4 0x10cf74700 in test_gnl_func file_utils.c:40
+    #5 0x10cf6a981 in main tester.c:129
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "only_nl.txt")[0m: expected: "\n", got: <NULL>
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "only_nl.txt")[0m: not enough memory allocated, needed: 2, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "\n"
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "only_nl.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c90020 0x0 + 140732703244320
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf75ac8 gnl_strchr + 120
+11  test2.out                           0x000000010cf750ef read_file + 303
+12  test2.out                           0x000000010cf74e84 get_next_line + 84
+13  test2.out                           0x000000010cf74701 test_gnl_func + 65
+14  test2.out                           0x000000010cf6a9cb main + 7643
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11087==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000270 at pc 0x00010cf75ac8 bp 0x7ffee2c90020 sp 0x7ffee2c90018
+[1m[0m[1m[34mREAD of size 1 at 0x602000000270 thread T0[1m[0m
+    #0 0x10cf75ac7 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10cf750ee in read_file get_next_line.c:54
+    #2 0x10cf74e83 in get_next_line get_next_line.c:28
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6b0ef in main tester.c:135
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000270 is located 0 bytes inside of 1-byte region [0x602000000270,0x602000000271)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x1105752c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x10cf6ef85 in free malloc_mock.c:82
+    #2 0x10cf74f83 in get_next_line get_next_line.c:37
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6b0a7 in main tester.c:135
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75711 in clean_stash get_next_line.c:99
+    #3 0x10cf74f02 in get_next_line get_next_line.c:35
+    #4 0x10cf74700 in test_gnl_func file_utils.c:40
+    #5 0x10cf6b0a7 in main tester.c:135
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "multiple_nl.txt")[0m: expected: "\n", got: <NULL>
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "multiple_nl.txt")[0m: not enough memory allocated, needed: 2, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "\n"
+[1;31mError[0m in test 6: [0;36mget_next_line(5: "multiple_nl.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c90020 0x0 + 140732703244320
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf75ac8 gnl_strchr + 120
+11  test2.out                           0x000000010cf750ef read_file + 303
+12  test2.out                           0x000000010cf74e84 get_next_line + 84
+13  test2.out                           0x000000010cf74701 test_gnl_func + 65
+14  test2.out                           0x000000010cf6b0f0 main + 9472
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11090==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6040000006bc at pc 0x00010cf756e0 bp 0x7ffee2c900e0 sp 0x7ffee2c900d8
+[1m[0m[1m[34mREAD of size 1 at 0x6040000006bc thread T0[1m[0m
+    #0 0x10cf756df in clean_stash get_next_line.c:97
+    #1 0x10cf74f02 in get_next_line get_next_line.c:35
+    #2 0x10cf74700 in test_gnl_func file_utils.c:40
+    #3 0x10cf6b9d9 in main tester.c:145
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6040000006bc is located 0 bytes to the right of 44-byte region [0x604000000690,0x6040000006bc)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75bca in gnl_strjoin get_next_line_utils.c:47
+    #3 0x10cf751ba in read_file get_next_line.c:60
+    #4 0x10cf74e83 in get_next_line get_next_line.c:28
+    #5 0x10cf74700 in test_gnl_func file_utils.c:40
+    #6 0x10cf6b9d9 in main tester.c:145
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 12: [0;36mget_next_line(5: "variable_nls.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c900e0 0x0 + 140732703244512
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf756e0 clean_stash + 112
+11  test2.out                           0x000000010cf74f03 get_next_line + 211
+12  test2.out                           0x000000010cf74701 test_gnl_func + 65
+13  test2.out                           0x000000010cf6b9da main + 11754
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11095==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000270 at pc 0x00010cf75ac8 bp 0x7ffee2c90020 sp 0x7ffee2c90018
+[1m[0m[1m[34mREAD of size 1 at 0x602000000270 thread T0[1m[0m
+    #0 0x10cf75ac7 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10cf750ee in read_file get_next_line.c:54
+    #2 0x10cf74e83 in get_next_line get_next_line.c:28
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6c146 in main tester.c:162
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000270 is located 0 bytes inside of 1-byte region [0x602000000270,0x602000000271)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x1105752c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x10cf6ef85 in free malloc_mock.c:82
+    #2 0x10cf74f83 in get_next_line get_next_line.c:37
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6c0fe in main tester.c:162
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75711 in clean_stash get_next_line.c:99
+    #3 0x10cf74f02 in get_next_line get_next_line.c:35
+    #4 0x10cf74700 in test_gnl_func file_utils.c:40
+    #5 0x10cf6c0fe in main tester.c:162
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "lines_around_10.txt")[0m: expected: "xxxx\n", got: <NULL>
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "lines_around_10.txt")[0m: not enough memory allocated, needed: 6, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "xxxx\n"
+[1;31mError[0m in test 6: [0;36mget_next_line(5: "lines_around_10.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c90020 0x0 + 140732703244320
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf75ac8 gnl_strchr + 120
+11  test2.out                           0x000000010cf750ef read_file + 303
+12  test2.out                           0x000000010cf74e84 get_next_line + 84
+13  test2.out                           0x000000010cf74701 test_gnl_func + 65
+14  test2.out                           0x000000010cf6c147 main + 13655
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11098==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x62a000023021 at pc 0x00010cf756e0 bp 0x7ffee2c900e0 sp 0x7ffee2c900d8
+[1m[0m[1m[34mREAD of size 1 at 0x62a000023021 thread T0[1m[0m
+    #0 0x10cf756df in clean_stash get_next_line.c:97
+    #1 0x10cf74f02 in get_next_line get_next_line.c:35
+    #2 0x10cf74700 in test_gnl_func file_utils.c:40
+    #3 0x10cf6c730 in main tester.c:173
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x62a000023021 is located 0 bytes to the right of 20001-byte region [0x62a00001e200,0x62a000023021)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75bca in gnl_strjoin get_next_line_utils.c:47
+    #3 0x10cf751ba in read_file get_next_line.c:60
+    #4 0x10cf74e83 in get_next_line get_next_line.c:28
+    #5 0x10cf74700 in test_gnl_func file_utils.c:40
+    #6 0x10cf6c730 in main tester.c:173
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "giant_line.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c900e0 0x0 + 140732703244512
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf756e0 clean_stash + 112
+11  test2.out                           0x000000010cf74f03 get_next_line + 211
+12  test2.out                           0x000000010cf74701 test_gnl_func + 65
+13  test2.out                           0x000000010cf6c731 main + 15169
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11101==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6020000001a0 at pc 0x00010cf756e0 bp 0x7ffee2c900e0 sp 0x7ffee2c900d8
+[1m[0m[1m[34mREAD of size 1 at 0x6020000001a0 thread T0[1m[0m
+    #0 0x10cf756df in clean_stash get_next_line.c:97
+    #1 0x10cf74f02 in get_next_line get_next_line.c:35
+    #2 0x10cf74700 in test_gnl_func file_utils.c:40
+    #3 0x10cf6ceac in main tester.c:181
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6020000001a0 is located 0 bytes to the right of 16-byte region [0x602000000190,0x6020000001a0)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75bca in gnl_strjoin get_next_line_utils.c:47
+    #3 0x10cf751ba in read_file get_next_line.c:60
+    #4 0x10cf74e83 in get_next_line get_next_line.c:28
+    #5 0x10cf74700 in test_gnl_func file_utils.c:40
+    #6 0x10cf6ceac in main tester.c:181
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "giant_line_nl.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c900e0 0x0 + 140732703244512
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf756e0 clean_stash + 112
+11  test2.out                           0x000000010cf74f03 get_next_line + 211
+12  test2.out                           0x000000010cf74701 test_gnl_func + 65
+13  test2.out                           0x000000010cf6cead main + 17085
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11104==ERROR: AddressSanitizer: heap-use-after-free on address 0x6020000002b0 at pc 0x00010cf75ac8 bp 0x7ffee2c90020 sp 0x7ffee2c90018
+[1m[0m[1m[34mREAD of size 1 at 0x6020000002b0 thread T0[1m[0m
+    #0 0x10cf75ac7 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10cf750ee in read_file get_next_line.c:54
+    #2 0x10cf74e83 in get_next_line get_next_line.c:28
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6d7cb in main tester.c:193
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6020000002b0 is located 0 bytes inside of 1-byte region [0x6020000002b0,0x6020000002b1)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x1105752c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x10cf6ef85 in free malloc_mock.c:82
+    #2 0x10cf74f83 in get_next_line get_next_line.c:37
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6d783 in main tester.c:193
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75711 in clean_stash get_next_line.c:99
+    #3 0x10cf74f02 in get_next_line get_next_line.c:35
+    #4 0x10cf74700 in test_gnl_func file_utils.c:40
+    #5 0x10cf6d783 in main tester.c:193
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 4: [0;36mget_next_line(5: "read_error.txt")[0m: expected: "aaaaaaaaaa\n", got: "ccccccccaaaaaaaaaa\n"
+[1;31mError[0m in test 7: [0;36mget_next_line(5: "read_error.txt")[0m: expected: "dddddddddd\n", got: <NULL>
+[1;31mError[0m in test 7: [0;36mget_next_line(5: "read_error.txt")[0m: not enough memory allocated, needed: 12, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "dddddddddd\n"
+[1;31mError[0m in test 8: [0;36mget_next_line(5: "read_error.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c90020 0x0 + 140732703244320
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf75ac8 gnl_strchr + 120
+11  test2.out                           0x000000010cf750ef read_file + 303
+12  test2.out                           0x000000010cf74e84 get_next_line + 84
+13  test2.out                           0x000000010cf74701 test_gnl_func + 65
+14  test2.out                           0x000000010cf6d7cc main + 19420
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11109==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60200000017a at pc 0x00010cf756e0 bp 0x7ffee2c8d7b0 sp 0x7ffee2c8d7a8
+[1m[0m[1m[34mREAD of size 1 at 0x60200000017a thread T0[1m[0m
+    #0 0x10cf756df in clean_stash get_next_line.c:97
+    #1 0x10cf74f02 in get_next_line get_next_line.c:35
+    #2 0x10cf74b57 in test_gnl_func_limits file_utils.c:73
+    #3 0x10cf68a2d in test_limit tester.c:84
+    #4 0x10cf6de51 in main tester.c:235
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x60200000017a is located 0 bytes to the right of 10-byte region [0x602000000170,0x60200000017a)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75bca in gnl_strjoin get_next_line_utils.c:47
+    #3 0x10cf751ba in read_file get_next_line.c:60
+    #4 0x10cf74e83 in get_next_line get_next_line.c:28
+    #5 0x10cf74b57 in test_gnl_func_limits file_utils.c:73
+    #6 0x10cf68a2d in test_limit tester.c:84
+    #7 0x10cf6de51 in main tester.c:235
+    #8 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "limits.txt")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   test2.out                           0x000000010cf756e0 clean_stash + 112
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf756e0 clean_stash + 112
+11  test2.out                           0x000000010cf74f03 get_next_line + 211
+12  test2.out                           0x000000010cf74b58 test_gnl_func_limits + 72
+13  test2.out                           0x000000010cf68a2e test_limit + 526
+14  test2.out                           0x000000010cf6de52 main + 21090
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11112==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000270 at pc 0x00010cf75ac8 bp 0x7ffee2c90020 sp 0x7ffee2c90018
+[1m[0m[1m[34mREAD of size 1 at 0x602000000270 thread T0[1m[0m
+    #0 0x10cf75ac7 in gnl_strchr get_next_line_utils.c:29
+    #1 0x10cf750ee in read_file get_next_line.c:54
+    #2 0x10cf74e83 in get_next_line get_next_line.c:28
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6e4a1 in main tester.c:243
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000270 is located 0 bytes inside of 1-byte region [0x602000000270,0x602000000271)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x1105752c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x10cf6ef85 in free malloc_mock.c:82
+    #2 0x10cf74f83 in get_next_line get_next_line.c:37
+    #3 0x10cf74700 in test_gnl_func file_utils.c:40
+    #4 0x10cf6e462 in main tester.c:243
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x11057517d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x10cf6e94c in malloc malloc_mock.c:65
+    #2 0x10cf75711 in clean_stash get_next_line.c:99
+    #3 0x10cf74f02 in get_next_line get_next_line.c:35
+    #4 0x10cf74700 in test_gnl_func file_utils.c:40
+    #5 0x10cf6e462 in main tester.c:243
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test2.out
+[1;31mError[0m in test 5: [0;36mget_next_line(0: "stdin")[0m: expected: "xxxx\n", got: <NULL>
+[1;31mError[0m in test 5: [0;36mget_next_line(0: "stdin")[0m: not enough memory allocated, needed: 6, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "xxxx\n"
+[1;31mError[0m in test 6: [0;36mget_next_line(0: "stdin")[0m: [1;31mMemory problems![0m
+0   test2.out                           0x000000010cf71583 show_signal_msg + 419
+1   test2.out                           0x000000010cf71651 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffee2c90020 0x0 + 140732703244320
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000110594cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x00000001105946a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x000000011057b09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x000000011057bae8 __asan_report_load1 + 40
+10  test2.out                           0x000000010cf75ac8 gnl_strchr + 120
+11  test2.out                           0x000000010cf750ef read_file + 303
+12  test2.out                           0x000000010cf74e84 get_next_line + 84
+13  test2.out                           0x000000010cf74701 test_gnl_func + 65
+14  test2.out                           0x000000010cf6e4a2 main + 22706
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+##==##==##&&##==##==##./test2.out
+##==##==##&&##==##==##./test3.out
+=================================================================
+[1m[31m==11127==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000131 at pc 0x0001009a9730 bp 0x7ffeef25c140 sp 0x7ffeef25c138
+[1m[0m[1m[34mREAD of size 1 at 0x602000000131 thread T0[1m[0m
+    #0 0x1009a972f in clean_stash get_next_line.c:97
+    #1 0x1009a8f22 in get_next_line get_next_line.c:35
+    #2 0x1009a8720 in test_gnl_func file_utils.c:40
+    #3 0x10099dd62 in main tester.c:111
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000131 is located 0 bytes to the right of 1-byte region [0x602000000130,0x602000000131)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9c1a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x1009a920b in read_file get_next_line.c:60
+    #4 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #5 0x1009a8720 in test_gnl_func file_utils.c:40
+    #6 0x10099dd62 in main tester.c:111
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "empty.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00000001090fdb8d 0x0 + 4447001485
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9730 clean_stash + 112
+11  test3.out                           0x00000001009a8f23 get_next_line + 211
+12  test3.out                           0x00000001009a8721 test_gnl_func + 65
+13  test3.out                           0x000000010099dd63 main + 2963
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11130==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000152 at pc 0x0001009a9730 bp 0x7ffeef25c140 sp 0x7ffeef25c138
+[1m[0m[1m[34mREAD of size 1 at 0x602000000152 thread T0[1m[0m
+    #0 0x1009a972f in clean_stash get_next_line.c:97
+    #1 0x1009a8f22 in get_next_line get_next_line.c:35
+    #2 0x1009a8720 in test_gnl_func file_utils.c:40
+    #3 0x10099e35b in main tester.c:117
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000152 is located 0 bytes to the right of 2-byte region [0x602000000150,0x602000000152)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9c1a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x1009a920b in read_file get_next_line.c:60
+    #4 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #5 0x1009a8720 in test_gnl_func file_utils.c:40
+    #6 0x10099e35b in main tester.c:117
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "1char.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00000001090fdb8d 0x0 + 4447001485
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9730 clean_stash + 112
+11  test3.out                           0x00000001009a8f23 get_next_line + 211
+12  test3.out                           0x00000001009a8721 test_gnl_func + 65
+13  test3.out                           0x000000010099e35c main + 4492
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11134==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6030000017cb at pc 0x0001009a9730 bp 0x7ffeef25c140 sp 0x7ffeef25c138
+[1m[0m[1m[34mREAD of size 1 at 0x6030000017cb thread T0[1m[0m
+    #0 0x1009a972f in clean_stash get_next_line.c:97
+    #1 0x1009a8f22 in get_next_line get_next_line.c:35
+    #2 0x1009a8720 in test_gnl_func file_utils.c:40
+    #3 0x10099e954 in main tester.c:123
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6030000017cb is located 0 bytes to the right of 27-byte region [0x6030000017b0,0x6030000017cb)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9c1a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x1009a920b in read_file get_next_line.c:60
+    #4 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #5 0x1009a8720 in test_gnl_func file_utils.c:40
+    #6 0x10099e954 in main tester.c:123
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "one_line_no_nl.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00000001090fdb8d 0x0 + 4447001485
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9730 clean_stash + 112
+11  test3.out                           0x00000001009a8f23 get_next_line + 211
+12  test3.out                           0x00000001009a8721 test_gnl_func + 65
+13  test3.out                           0x000000010099e955 main + 6021
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11138==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000170 at pc 0x0001009a9b18 bp 0x7ffeef167d60 sp 0x7ffeef167d58
+[1m[0m[1m[34mREAD of size 1 at 0x602000000170 thread T0[1m[0m
+    #0 0x1009a9b17 in gnl_strchr get_next_line_utils.c:29
+    #1 0x1009a912a in read_file get_next_line.c:54
+    #2 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x10099ef96 in main tester.c:129
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000170 is located 0 bytes inside of 1-byte region [0x602000000170,0x602000000171)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x103fa92c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x1009a2fa5 in free malloc_mock.c:82
+    #2 0x1009a8fa3 in get_next_line get_next_line.c:37
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x10099ef4d in main tester.c:129
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9761 in clean_stash get_next_line.c:99
+    #3 0x1009a8f22 in get_next_line get_next_line.c:35
+    #4 0x1009a8720 in test_gnl_func file_utils.c:40
+    #5 0x10099ef4d in main tester.c:129
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "only_nl.txt")[0m: expected: "\n", got: <NULL>
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "only_nl.txt")[0m: not enough memory allocated, needed: 2, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "\n"
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "only_nl.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeef167d60 0x0 + 140732909649248
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9b18 gnl_strchr + 120
+11  test3.out                           0x00000001009a912b read_file + 331
+12  test3.out                           0x00000001009a8ea4 get_next_line + 84
+13  test3.out                           0x00000001009a8721 test_gnl_func + 65
+14  test3.out                           0x000000010099ef97 main + 7623
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11141==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000270 at pc 0x0001009a9b18 bp 0x7ffeef167d60 sp 0x7ffeef167d58
+[1m[0m[1m[34mREAD of size 1 at 0x602000000270 thread T0[1m[0m
+    #0 0x1009a9b17 in gnl_strchr get_next_line_utils.c:29
+    #1 0x1009a912a in read_file get_next_line.c:54
+    #2 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x10099f6bb in main tester.c:135
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000270 is located 0 bytes inside of 1-byte region [0x602000000270,0x602000000271)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x103fa92c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x1009a2fa5 in free malloc_mock.c:82
+    #2 0x1009a8fa3 in get_next_line get_next_line.c:37
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x10099f673 in main tester.c:135
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9761 in clean_stash get_next_line.c:99
+    #3 0x1009a8f22 in get_next_line get_next_line.c:35
+    #4 0x1009a8720 in test_gnl_func file_utils.c:40
+    #5 0x10099f673 in main tester.c:135
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "multiple_nl.txt")[0m: expected: "\n", got: <NULL>
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "multiple_nl.txt")[0m: not enough memory allocated, needed: 2, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "\n"
+[1;31mError[0m in test 6: [0;36mget_next_line(5: "multiple_nl.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeef167d60 0x0 + 140732909649248
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9b18 gnl_strchr + 120
+11  test3.out                           0x00000001009a912b read_file + 331
+12  test3.out                           0x00000001009a8ea4 get_next_line + 84
+13  test3.out                           0x00000001009a8721 test_gnl_func + 65
+14  test3.out                           0x000000010099f6bc main + 9452
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11144==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x60400000057c at pc 0x0001009a9730 bp 0x7ffeef25c140 sp 0x7ffeef25c138
+[1m[0m[1m[34mREAD of size 1 at 0x60400000057c thread T0[1m[0m
+    #0 0x1009a972f in clean_stash get_next_line.c:97
+    #1 0x1009a8f22 in get_next_line get_next_line.c:35
+    #2 0x1009a8720 in test_gnl_func file_utils.c:40
+    #3 0x10099ffa5 in main tester.c:145
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x60400000057c is located 0 bytes to the right of 44-byte region [0x604000000550,0x60400000057c)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9c1a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x1009a920b in read_file get_next_line.c:60
+    #4 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #5 0x1009a8720 in test_gnl_func file_utils.c:40
+    #6 0x10099ffa5 in main tester.c:145
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 12: [0;36mget_next_line(5: "variable_nls.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00000001090fdb8d 0x0 + 4447001485
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9730 clean_stash + 112
+11  test3.out                           0x00000001009a8f23 get_next_line + 211
+12  test3.out                           0x00000001009a8721 test_gnl_func + 65
+13  test3.out                           0x000000010099ffa6 main + 11734
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11147==ERROR: AddressSanitizer: heap-use-after-free on address 0x6020000001f0 at pc 0x0001009a9b18 bp 0x7ffeef167d60 sp 0x7ffeef167d58
+[1m[0m[1m[34mREAD of size 1 at 0x6020000001f0 thread T0[1m[0m
+    #0 0x1009a9b17 in gnl_strchr get_next_line_utils.c:29
+    #1 0x1009a912a in read_file get_next_line.c:54
+    #2 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x1009a0712 in main tester.c:162
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6020000001f0 is located 0 bytes inside of 1-byte region [0x6020000001f0,0x6020000001f1)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x103fa92c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x1009a2fa5 in free malloc_mock.c:82
+    #2 0x1009a8fa3 in get_next_line get_next_line.c:37
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x1009a06ca in main tester.c:162
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9761 in clean_stash get_next_line.c:99
+    #3 0x1009a8f22 in get_next_line get_next_line.c:35
+    #4 0x1009a8720 in test_gnl_func file_utils.c:40
+    #5 0x1009a06ca in main tester.c:162
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "lines_around_10.txt")[0m: expected: "xxxx\n", got: <NULL>
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "lines_around_10.txt")[0m: not enough memory allocated, needed: 6, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "xxxx\n"
+[1;31mError[0m in test 6: [0;36mget_next_line(5: "lines_around_10.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeef167d60 0x0 + 140732909649248
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9b18 gnl_strchr + 120
+11  test3.out                           0x00000001009a912b read_file + 331
+12  test3.out                           0x00000001009a8ea4 get_next_line + 84
+13  test3.out                           0x00000001009a8721 test_gnl_func + 65
+14  test3.out                           0x00000001009a0713 main + 13635
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11150==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x62a00000b021 at pc 0x0001009a9730 bp 0x7ffeef25c140 sp 0x7ffeef25c138
+[1m[0m[1m[34mREAD of size 1 at 0x62a00000b021 thread T0[1m[0m
+    #0 0x1009a972f in clean_stash get_next_line.c:97
+    #1 0x1009a8f22 in get_next_line get_next_line.c:35
+    #2 0x1009a8720 in test_gnl_func file_utils.c:40
+    #3 0x1009a0cfc in main tester.c:173
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x62a00000b021 is located 0 bytes to the right of 20001-byte region [0x62a000006200,0x62a00000b021)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9c1a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x1009a920b in read_file get_next_line.c:60
+    #4 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #5 0x1009a8720 in test_gnl_func file_utils.c:40
+    #6 0x1009a0cfc in main tester.c:173
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 1: [0;36mget_next_line(5: "giant_line.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00000001090fdb8d 0x0 + 4447001485
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9730 clean_stash + 112
+11  test3.out                           0x00000001009a8f23 get_next_line + 211
+12  test3.out                           0x00000001009a8721 test_gnl_func + 65
+13  test3.out                           0x00000001009a0cfd main + 15149
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11155==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000000160 at pc 0x0001009a9730 bp 0x7ffeef25c140 sp 0x7ffeef25c138
+[1m[0m[1m[34mREAD of size 1 at 0x602000000160 thread T0[1m[0m
+    #0 0x1009a972f in clean_stash get_next_line.c:97
+    #1 0x1009a8f22 in get_next_line get_next_line.c:35
+    #2 0x1009a8720 in test_gnl_func file_utils.c:40
+    #3 0x1009a1478 in main tester.c:181
+    #4 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x602000000160 is located 0 bytes to the right of 16-byte region [0x602000000150,0x602000000160)
+[1m[0m[1m[35mallocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9c1a in gnl_strjoin get_next_line_utils.c:47
+    #3 0x1009a920b in read_file get_next_line.c:60
+    #4 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #5 0x1009a8720 in test_gnl_func file_utils.c:40
+    #6 0x1009a1478 in main tester.c:181
+    #7 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow get_next_line.c:97 in clean_stash
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 2: [0;36mget_next_line(5: "giant_line_nl.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00000001090fdb8d 0x0 + 4447001485
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9730 clean_stash + 112
+11  test3.out                           0x00000001009a8f23 get_next_line + 211
+12  test3.out                           0x00000001009a8721 test_gnl_func + 65
+13  test3.out                           0x00000001009a1479 main + 17065
+14  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+15  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11159==ERROR: AddressSanitizer: heap-use-after-free on address 0x6020000001d0 at pc 0x0001009a9b18 bp 0x7ffeef167d60 sp 0x7ffeef167d58
+[1m[0m[1m[34mREAD of size 1 at 0x6020000001d0 thread T0[1m[0m
+    #0 0x1009a9b17 in gnl_strchr get_next_line_utils.c:29
+    #1 0x1009a912a in read_file get_next_line.c:54
+    #2 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x1009a1cd2 in main tester.c:193
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6020000001d0 is located 0 bytes inside of 1-byte region [0x6020000001d0,0x6020000001d1)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x103fa92c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x1009a2fa5 in free malloc_mock.c:82
+    #2 0x1009a8fa3 in get_next_line get_next_line.c:37
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x1009a1c90 in main tester.c:193
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9761 in clean_stash get_next_line.c:99
+    #3 0x1009a8f22 in get_next_line get_next_line.c:35
+    #4 0x1009a8720 in test_gnl_func file_utils.c:40
+    #5 0x1009a1c90 in main tester.c:193
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 3: [0;36mget_next_line(5: "read_error.txt")[0m: expected: <NULL>, got: "cccccccccc\n"
+[1;31mError[0m in test 4: [0;36mget_next_line(5: "read_error.txt")[0m: expected: "aaaaaaaaaa\n", got: <NULL>
+[1;31mError[0m in test 4: [0;36mget_next_line(5: "read_error.txt")[0m: not enough memory allocated, needed: 12, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "aaaaaaaaaa\n"
+[1;31mError[0m in test 5: [0;36mget_next_line(5: "read_error.txt")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeef167d60 0x0 + 140732909649248
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9b18 gnl_strchr + 120
+11  test3.out                           0x00000001009a912b read_file + 331
+12  test3.out                           0x00000001009a8ea4 get_next_line + 84
+13  test3.out                           0x00000001009a8721 test_gnl_func + 65
+14  test3.out                           0x00000001009a1cd3 main + 19203
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+=================================================================
+[1m[31m==11162==ERROR: AddressSanitizer: heap-use-after-free on address 0x6020000001f0 at pc 0x0001009a9b18 bp 0x7ffeef167d60 sp 0x7ffeef167d58
+[1m[0m[1m[34mREAD of size 1 at 0x6020000001f0 thread T0[1m[0m
+    #0 0x1009a9b17 in gnl_strchr get_next_line_utils.c:29
+    #1 0x1009a912a in read_file get_next_line.c:54
+    #2 0x1009a8ea3 in get_next_line get_next_line.c:28
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x1009a24ce in main tester.c:243
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[32m0x6020000001f0 is located 0 bytes inside of 1-byte region [0x6020000001f0,0x6020000001f1)
+[1m[0m[1m[35mfreed by thread T0 here:[1m[0m
+    #0 0x103fa92c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x1009a2fa5 in free malloc_mock.c:82
+    #2 0x1009a8fa3 in get_next_line get_next_line.c:37
+    #3 0x1009a8720 in test_gnl_func file_utils.c:40
+    #4 0x1009a248f in main tester.c:243
+    #5 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+[1m[35mpreviously allocated by thread T0 here:[1m[0m
+    #0 0x103fa917d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1009a296c in malloc malloc_mock.c:65
+    #2 0x1009a9761 in clean_stash get_next_line.c:99
+    #3 0x1009a8f22 in get_next_line get_next_line.c:35
+    #4 0x1009a8720 in test_gnl_func file_utils.c:40
+    #5 0x1009a248f in main tester.c:243
+    #6 0x7fff6f953cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_utils.c:29 in gnl_strchr
+##==##==##&&##==##==##./test3.out
+[1;31mError[0m in test 5: [0;36mget_next_line(0: "stdin")[0m: expected: "xxxx\n", got: <NULL>
+[1;31mError[0m in test 5: [0;36mget_next_line(0: "stdin")[0m: not enough memory allocated, needed: 6, reserved: 0
+Could not find the corresponding allocation or the pointer 0x0
+should reserve space for the string: "xxxx\n"
+[1;31mError[0m in test 6: [0;36mget_next_line(0: "stdin")[0m: [1;31mMemory problems![0m
+0   test3.out                           0x00000001009a55a3 show_signal_msg + 419
+1   test3.out                           0x00000001009a5671 sigabort + 33
+2   libsystem_platform.dylib            0x00007fff6fb4c5fd _sigtramp + 29
+3   ???                                 0x00007ffeef167d60 0x0 + 140732909649248
+4   libsystem_c.dylib                   0x00007fff6fa22808 abort + 120
+5   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc8cb6 _ZN11__sanitizer5AbortEv + 70
+6   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fc86a4 _ZN11__sanitizer3DieEv + 196
+7   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf7c6 _ZN6__asan19ScopedInErrorReportD2Ev + 422
+8   libclang_rt.asan_osx_dynamic.dylib  0x0000000103faf09e _ZN6__asan18ReportGenericErrorEmmmmbmjb + 1198
+9   libclang_rt.asan_osx_dynamic.dylib  0x0000000103fafae8 __asan_report_load1 + 40
+10  test3.out                           0x00000001009a9b18 gnl_strchr + 120
+11  test3.out                           0x00000001009a912b read_file + 331
+12  test3.out                           0x00000001009a8ea4 get_next_line + 84
+13  test3.out                           0x00000001009a8721 test_gnl_func + 65
+14  test3.out                           0x00000001009a24cf main + 21247
+15  libdyld.dylib                       0x00007fff6f953cc9 start + 1
+16  ???                                 0x0000000000000001 0x0 + 1
+
+##==##==##&&##==##==##./test3.out

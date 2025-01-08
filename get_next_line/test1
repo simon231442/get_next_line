@@ -1,0 +1,16 @@
+Voici un ASCII art simple mais avec :
+
+   _____      _   _   _      _          
+  / ____|    | | | | (_)    (_)         
+ | |  __  ___| |_| |_ _  ___ _  ___     
+ | | |_ |/ _ \ __| __| |/ __| |/ _ \    
+ | |__| |  __/ |_| |_| | (__| |  __/    
+  \_____|\___|\__|\__|_|\___|_|\___|    
+                                        
+       Test du get_next_line            
+-----------------------------------     
+  Ceci est un fichier de test           
+  pour vérifier que ton get_next_line   
+  fonctionne correctement.              
+-----------------------------------     
+  Chaque ligne est importante !       
