@@ -6,13 +6,13 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 23:39:52 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/07 20:23:42 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/08 13:05:57 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*read_file(char *stash,int fd);
+char	*read_file(char *stash, int fd);
 char	*extract_line(char *stash);
 char	*clean_stash(char *stash, int len_line);
 char	*init_stash(char *stash);
@@ -21,7 +21,7 @@ char	*get_next_line(int fd)
 {
 	static char	*stash;
 	char		*line;
-	int		len_line;
+	int			len_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
@@ -69,14 +69,14 @@ char	*read_file(char *stash, int fd)
 char	*extract_line(char *stash)
 {
 	char	*line;
-	int	len_line;
+	int		len_line;
 
 	len_line = 0;
 	while (stash[len_line] != '\n' && stash[len_line])
 		len_line++;
 	line = malloc(sizeof(char) * (len_line + 2));
 	if (!line)
-		return(NULL);
+		return (NULL);
 	len_line = 0;
 	while (stash[len_line] != '\n' && stash[len_line])
 	{
@@ -91,7 +91,7 @@ char	*extract_line(char *stash)
 char	*clean_stash(char *stash, int len_line)
 {
 	char	*cleaned_stash;
-	int	len_cleaned_stash;
+	int		len_cleaned_stash;
 
 	len_cleaned_stash = 0;
 	while (stash[len_line + len_cleaned_stash])
@@ -111,14 +111,12 @@ char	*clean_stash(char *stash, int len_line)
 
 char	*init_stash(char *stash)
 {
-	stash = malloc(sizeof(char)*1);
+	stash = malloc(sizeof(char) * 1);
 	if (!stash)
 		return (NULL);
 	stash[0] = '\0';
 	return (stash);
 }
-
-
 #include <fcntl.h>
 #include <stdio.h>
 int	main(void)

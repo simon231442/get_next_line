@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:21:48 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/07 11:46:55 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/08 12:58:08 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,29 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-char    *gnl_strchr(char *s, char c)
+char	*gnl_strchr(char *s, char c)
 {
 	if (!s)
-		return(NULL);
+		return (NULL);
 	while (*s)
 	{
 		if (*s == c)
-			return(s);
+			return (s);
 		s++;
 	}
 	return (NULL);
 }
 
-void    ft_strcpy(char *dest, const char *src);
-void    ft_strcat(char *dest, const char *src);
+void	ft_strcpy(char *dest, const char *src);
+void	ft_strcat(char *dest, const char *src);
 
-char    *gnl_strjoin(char *stash, char *buff)
+char	*gnl_strjoin(char *stash, char *buff)
 {
 	char	*str;
 
 	if (!stash)
-		return(NULL);
-	str = malloc(sizeof(char)*(ft_strlen(stash) + ft_strlen(buff) + 1));
+		return (NULL);
+	str = malloc(sizeof(char) * (ft_strlen(stash) + ft_strlen(buff) + 1));
 	if (!str)
 		return (NULL);
 	ft_strcpy(str, stash);
@@ -52,9 +52,9 @@ char    *gnl_strjoin(char *stash, char *buff)
 	return (str);
 }
 
-void    ft_strcpy(char *dest, const char *src)
+void	ft_strcpy(char *dest, const char *src)
 {
-	size_t  i;
+	size_t	i;
 
 	i = 0;
 	while (src[i])
@@ -65,10 +65,10 @@ void    ft_strcpy(char *dest, const char *src)
 	dest[i] = '\0';
 }
 
-void    ft_strcat(char *dest, const char *src)
+void	ft_strcat(char *dest, const char *src)
 {
-	size_t  i;
-	size_t  len;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
 	len = ft_strlen(dest);
@@ -79,4 +79,3 @@ void    ft_strcat(char *dest, const char *src)
 	}
 	dest[len + i] = '\0';
 }
-
