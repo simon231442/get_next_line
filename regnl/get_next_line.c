@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 23:39:52 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/08 21:55:58 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/08 22:24:53 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ char	*init_stash(char *stash)
 	stash[0] = '\0';
 	return (stash);
 }
-
+/*
 #include <fcntl.h>
 #include <stdio.h>
 int	main(void)
@@ -148,4 +148,4 @@ int	main(void)
 	}
 	close(fd);
 	return (0);
-}
+}*/
