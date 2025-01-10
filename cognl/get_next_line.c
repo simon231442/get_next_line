@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 23:39:52 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/09 15:39:32 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/10 13:26:06 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ char	*read_file(char *stash, int fd)
 	while (!gnl_strchr(stash, '\n') && bytes_read > 0)
 	{
 		bytes_read = read(fd, buff, BUFFER_SIZE);
-		if (bytes_read <= 0)
+		if (bytes_read < 0)
 			return (free(stash), NULL);
 		buff[bytes_read] = '\0';
 		tmp_stash = gnl_strjoin(stash, buff);
 		if (!tmp_stash)
-			return (free(tmp_stash), NULL);
+			return (free(stash), NULL);
 		free(stash);
 		stash = tmp_stash;
 	}
@@ -72,9 +72,9 @@ char	*extract_line(char *stash)
 	int		len_line;
 
 	len_line = 0;
-	while (stash[len_line] != '\n' && stash[len_line + 1])
+	while (stash[len_line] != '\n' && stash[len_line])
 		len_line++;
-	line = malloc(sizeof(char) * (len_line + 1));
+	line = malloc(sizeof(char) * (len_line + 2));
 	if (!line)
 		return (NULL);
 	len_line = 0;
@@ -84,8 +84,8 @@ char	*extract_line(char *stash)
 		len_line++;
 	}
 	if (stash[len_line] == '\n')
-		line[len_line] = '\n';
-	line[len_line + 1] = '\0';
+		line[len_line++] = '\n';
+	line[len_line] = '\0';
 	return (line);
 }
 
@@ -107,7 +107,8 @@ char	*clean_stash(char *stash, int len_line)
 		len_cleaned_stash++;
 	}
 	cleaned_stash[len_cleaned_stash] = '\0';
-	return (free(stash), cleaned_stash);
+	free(stash);
+	return (cleaned_stash);
 }
 
 char	*init_stash(char *stash)
@@ -118,34 +119,3 @@ char	*init_stash(char *stash)
 	stash[0] = '\0';
 	return (stash);
 }
-/*
-#include <fcntl.h>
-#include <stdio.h>
-int	main(void)
-{
-	int		fd;
-	char	*line;
-	int		count;
-
-	count = 1;
-	fd = open("test", O_RDONLY);
-	while ((line = get_next_line(fd)))
-	{
-		printf("%d : %s", count, line);
-		free(line);
-		count++;
-	}
-	close(fd);
-
-	printf("\n\n");
-
-	fd = open("fsoares/empty.txt", O_RDONLY);
-	while ((line = get_next_line(fd)))
-	{
-		printf("%d : %s", count, line);
-		free(line);
-		count++;
-	}
-	close(fd);
-	return (0);
-}*/
