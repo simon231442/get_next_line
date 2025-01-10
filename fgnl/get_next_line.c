@@ -25,15 +25,15 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-		return (free_and_null(stash), NULL);
+		return (free_and_null(&stash), NULL);
 	stash = read_file(stash, fd);
 	if (!stash)
 		return (NULL);
 	if (!*stash)
-		return (free_and_null(stash), NULL);
+		return (free_and_null(&stash), NULL);
 	line = extract_line(stash);
 	if (!line)
-		return (free_and_null(stash), NULL);
+		return (free_and_null(&stash), NULL);
 	stash = clean_stash(stash);
 	return (line);
 }
@@ -137,10 +137,10 @@ char	*clean_stash(char *stash)
 	return (cleaned);
 }
 
-void	free_and_null(char *ptr)
+void	free_and_null(char **ptr)
 {
-	free(ptr);
-	ptr = NULL;
+	free(*ptr);
+	*ptr = NULL;
 }
 /*
 #include <fcntl.h>
@@ -159,18 +159,6 @@ int	main(void)
 		free(line);
 		count++;
 	}
-	close(fd);
-/*
-	printf("\n\n");
-
-	fd = open("test", O_RDONLY);
-	while ((line = get_next_line(fd)))
-	{
-		printf("%d : %s", count, line);
-		free(line);
-		count++;
-	}
-	close(fd);
-*//*	
+	close(fd);	
 	return (0);
 }*/

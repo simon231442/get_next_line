@@ -64,6 +64,6 @@ void	ft_strcat(char *dest, const char *src);
  */
 char	*gnl_strjoin(char *stash, char *buff);
 
-void	free_and_null(char *ptr);
+void	free_and_null(char **ptr);
 
 #endif
