@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:02:13 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/10 15:02:13 by srenaud          ###   ########.ch       */
+/*   Updated: 2025/01/10 18:24:46 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*get_next_line(int fd);
 char	*read_file(char *stash, int fd);
 char	*extract_line(char *stash);
 char	*clean_stash(char *stash);
-char	*init_stash(char *stash);
+void	free_and_null(char **ptr);
 
 /**
  * @brief Calculates string length
@@ -63,7 +63,5 @@ void	ft_strcat(char *dest, const char *src);
  * @return New joined string, or NULL on error
  */
 char	*gnl_strjoin(char *stash, char *buff);
-
-void	free_and_null(char **ptr);
 
 #endif

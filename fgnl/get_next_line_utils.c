@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:01:58 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/10 15:01:58 by srenaud          ###   ########.ch       */
+/*   Updated: 2025/01/10 18:00:51 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*gnl_strjoin(char *stash, char *buff)
 {
 	char	*str;
 
-	if (!stash)
+	if (!stash || !buff)
 		return (NULL);
 	str = malloc(sizeof(char) * (ft_strlen(stash) + ft_strlen(buff) + 1));
 	if (!str)

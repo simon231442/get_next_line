@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:01:36 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/10 17:02:44 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/10 18:27:30 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ char	*get_next_line(int fd)
  * @param stash Current content buffer
  * @param fd File descriptor to read from
  * @return Updated stash with new content, or NULL on error
- * @details Reads BUFFER_SIZE bytes at a time until newline is found or EOF
+ * @details Reads BUFFER_SIZE bytes at a time until newline is found or EOF.
+ *          Allocates new memory for the updated stash.
  */
 char	*read_file(char *stash, int fd)
 {
@@ -80,7 +81,8 @@ char	*read_file(char *stash, int fd)
  * @brief Extracts the next line from the stash
  * @param stash Buffer containing file content
  * @return Extracted line including newline if present, or NULL on error
- * @details Allocates new memory for the line up to newline or end of stash
+ * @details Allocates new memory for the line up to newline or end of stash.
+ *          The caller is responsible for freeing the returned line.
  */
 char	*extract_line(char *stash)
 {
@@ -137,6 +139,10 @@ char	*clean_stash(char *stash)
 	return (cleaned);
 }
 
+/**
+ * @brief Frees the memory pointed to by ptr and sets the pointer to NULL
+ * @param ptr Pointer to the memory to be freed
+ */
 void	free_and_null(char **ptr)
 {
 	free(*ptr);
