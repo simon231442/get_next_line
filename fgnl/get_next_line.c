@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:01:36 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/10 15:01:36 by srenaud          ###   ########.ch       */
+/*   Updated: 2025/01/10 17:02:44 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,13 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (free_and_null(&stash), NULL);
+	if (!stash)
+	{
+		stash = malloc(sizeof(char) * 1);
+		if (!stash)
+			return (NULL);
+		stash[0] = '\0';
+	}
 	stash = read_file(stash, fd);
 	if (!stash)
 		return (NULL);
@@ -51,13 +58,6 @@ char	*read_file(char *stash, int fd)
 	char	*tmp_stash;
 	int		bytes_read;
 
-	if (!stash)
-	{
-		stash = malloc(sizeof(char) * 1);
-		if (!stash)
-			return (NULL);
-		stash[0] = '\0';
-	}
 	bytes_read = 1;
 	while (!gnl_strchr(stash, '\n') && bytes_read > 0)
 	{
