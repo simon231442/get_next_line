@@ -63,12 +63,12 @@ char	*read_file(char *stash, int fd)
 	{
 		bytes_read = read(fd, buff, BUFFER_SIZE);
 		if (bytes_read == -1)
-			return (free(stash), NULL);
+			return (free_and_null(&stash), NULL);
 		buff[bytes_read] = '\0';
 		tmp_stash = gnl_strjoin(stash, buff);
 		if (!tmp_stash)
-			return (free(stash), NULL);
-		free(stash);
+			return (free_and_null(&stash), NULL);
+		free_and_null(&stash);
 		stash = tmp_stash;
 		if (bytes_read == 0)
 			break ;
@@ -125,15 +125,15 @@ char	*clean_stash(char *stash)
 	if (stash[i] == '\n')
 		i++;
 	if (!stash[i])
-		return (free(stash), NULL);
+		return (free_and_null(&stash), NULL);
 	cleaned = malloc(sizeof(char) * (ft_strlen(stash) - i + 1));
 	if (!cleaned)
-		return (free(stash), NULL);
+		return (free_and_null(&stash), NULL);
 	j = 0;
 	while (stash[i])
 		cleaned[j++] = stash[i++];
 	cleaned[j] = '\0';
-	free(stash);
+	free_and_null(&stash);
 	return (cleaned);
 }
 
