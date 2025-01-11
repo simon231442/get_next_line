@@ -6,7 +6,7 @@
 /*   By: srenaud <srenaud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 15:01:36 by srenaud           #+#    #+#             */
-/*   Updated: 2025/01/10 18:27:30 by srenaud          ###   ########.fr       */
+/*   Updated: 2025/01/10 19:07:09 by srenaud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,4 +167,57 @@ int	main(void)
 	}
 	close(fd);	
 	return (0);
+}
+
+#include <fcntl.h>
+#include <stdio.h>
+int	main(void)
+{
+//	int		fd;
+	char	*line;
+	int		count;
+
+	count = 1;
+//	fd = 0;
+	while ((line = get_next_line(STDIN_FILENO)))
+	{
+		printf("%d : %s", count, line);
+		free(line);
+		count++;
+	}	
+	return (0);
 }*/
+
+#include <fcntl.h>
+#include <stdio.h>
+int	main(int ac, char **av)
+{
+	int		fd;
+	char	*line;
+	int		count;
+
+	printf("BUFFER_SIZE = %d\n", BUFFER_SIZE);
+
+	count = 1;
+	if (ac == 1)
+	{
+		while ((line = get_next_line(STDIN_FILENO)))
+		{
+			printf("%d : %s", count, line);
+			free(line);
+			count++;
+		}
+	}
+	else
+	{
+		fd = open(av[1], O_RDONLY);
+		while ((line = get_next_line(fd)))
+		{
+			printf("%d : %s", count, line);
+			free(line);
+			count++;
+		}
+		close(fd);
+	}
+	return (0);
+}
